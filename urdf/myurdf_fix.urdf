@@ -4,6 +4,24 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="myurdf_fix">
+  <link name='base_footprint'/>
+  <joint name='base_footprint_joint'>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link='base_footprint'/>
+    <child link='base_link'/>
+  </joint>
+  <link name='laser_link'/>
+  <joint name='laser_joint'>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    <parent link='base_link'/>
+    <child link='laser_link'/>
+  </joint>
+  <link name='camera_link'/>
+  <joint name='camera_joint'>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    <parent link='base_link'/>
+    <child link='camera_link'/>
+  </joint>
   <link
     name="base_link">
     <inertial>
